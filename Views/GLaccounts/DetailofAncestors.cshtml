@@ -1,0 +1,44 @@
+﻿@using hidMy.Models
+@model IList<hidMy.Models_ViewModels.GLAccountsViewmodel>
+
+
+@{
+    ViewBag.Title = "Detail of Ancestors";
+}
+
+<h2>Detail of Ancestors</h2>
+
+<div>
+    <p>
+        @Html.ActionLink("List", "Index", new { page = (Request.QueryString["page"] ?? (string)Session["DefaultItemsPerPage"]), ipp = (Request.QueryString["ipp"] ?? (string)Session["DefaultItemsPerPage"]) })
+    </p>
+    <hr />
+    <table>
+
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+
+                @*@{ var ident = item.Level * 20;}*@
+               
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td class="col-lg-8">
+                    @Html.DisplayFor(modelItem => item.ClauseText)
+                </td>
+                <td class="col-lg-8">
+                    <a href="@Url.Action("Edit", "GLaccounts", new { id = item.Account,  ipp = (Request.QueryString["ipp"] ?? (string)Session["DefaultItemsPerPage"])})" class="btn btn-sm" title="Update recod">
+                        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                    </a>
+                </td>
+            </tr>
+        }
+    </table>
+
+</div>
+<p>
+    @Html.ActionLink("List", "Index", new { page = (Request.QueryString["page"] ?? (string)Session["DefaultItemsPerPage"]), ipp = (Request.QueryString["ipp"] ?? (string)Session["DefaultItemsPerPage"]) })
+</p>

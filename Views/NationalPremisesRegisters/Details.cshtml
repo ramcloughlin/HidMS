@@ -1,0 +1,154 @@
+﻿@model hidMy.Models.NationalPremisesRegister
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>NationalPremisesRegister</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Area)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Area)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubArea)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubArea)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubBuildingNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubBuildingNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BuildingNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BuildingNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BuildingName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BuildingName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StreetName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StreetName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Townland)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Townland)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Locality)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Locality)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CityTown)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CityTown)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.County)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.County)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Postcode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Postcode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FoodBusinessOperators)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FoodBusinessOperators)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BusinessCategory)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BusinessCategory)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BusinessType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BusinessType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RiskCategory)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RiskCategory)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FoodOfficer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FoodOfficer)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Reference }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

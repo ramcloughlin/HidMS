@@ -1,0 +1,146 @@
+﻿@model hidMy.Models.InspectionDetails
+
+@{
+    ViewBag.Title = "Create";
+}
+<h2>Create</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>InspectionDetails</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.Date, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control date-picker" } })
+            @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.PremisesRef, "PremisesRef", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("PremisesRef", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.PremisesRef, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.officer, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.officer, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.officer, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="border border-primary bg-info round">
+        <p></p>
+        <p><h4>Regulation 853/MLR Assessment</h4></p>
+        <p></p>
+        <div class="form-group">
+            @Html.LabelFor(model => model.GeneralHygieneStatus, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.GeneralHygieneStatus, new { htmlAttributes = new { @class = "form-control col-md-8", @id = "GeneralHygieneStatus", @width = "100%"} })
+                @Html.ValidationMessageFor(model => model.GeneralHygieneStatus, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group" id="MLRQ1Div">
+            @Html.LabelFor(model => model.MLRQ1, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="col-md-6">
+                    @Html.DropDownListFor(modelItem => modelItem.MLRQ1, new[] { new SelectListItem { Text = "------", Value = "" }, new SelectListItem { Text = "Yes", Value = "Yes" }, new SelectListItem { Text = "NO", Value = "No" } }, new { @id = "MLRQ1", onchange = "MLRQ1Change(this.value);" })
+                    @Html.ValidationMessageFor(model => model.MLRQ1, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group" style="display:none;" id="MLRQ2Div">
+            @Html.LabelFor(model => model.MLRQ2, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="col-md-6">
+                    @Html.DropDownListFor(modelItem => modelItem.MLRQ2, new[] { new SelectListItem { Text = "", Value = "" }, new SelectListItem { Text = "Yes", Value = "Yes" }, new SelectListItem { Text = "NO", Value = "No" } }, new { @id = "MLRQ2", onchange = "MLRQ2Change(this.value);" })
+                    @Html.ValidationMessageFor(model => model.MLRQ2, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group" style="display:none;" id="MLRQ3Div">
+            @Html.LabelFor(model => model.MLRQ3, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="col-md-6">
+                    @Html.DropDownListFor(modelItem => modelItem.MLRQ3, new[] { new SelectListItem { Text = "", Value = "" }, new SelectListItem { Text = "Yes", Value = "Yes" }, new SelectListItem { Text = "NO", Value = "No" } }, new { @id = "MLRQ3", onchange = "MLRQ3Change(this.value);" })
+                    @Html.ValidationMessageFor(model => model.MLRQ3, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group" style="display:none;" id="MLRQ4Div">
+            @Html.LabelFor(model => model.MLRQ4, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="col-md-6">
+                    @Html.DropDownListFor(modelItem => modelItem.MLRQ4, new[] { new SelectListItem { Text = "", Value = "" }, new SelectListItem { Text = "Yes", Value = "Yes" }, new SelectListItem { Text = "NO", Value = "No" } }, new { @id = "MLRQ4", onchange = "MLRQ4Change(this.value);" })
+                    @Html.ValidationMessageFor(model => model.MLRQ4, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group" style="display:none;" id="MLRQ5Div">
+            @Html.LabelFor(model => model.MLRQ5, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="col-md-6">
+                    @Html.DropDownListFor(modelItem => modelItem.MLRQ5, new[] { new SelectListItem { Text = "", Value = "" }, new SelectListItem { Text = "Yes", Value = "Yes" }, new SelectListItem { Text = "NO", Value = "No" } }, new { @id = "MLRQ5", onchange = "MLRQ5Change(this.value);" })
+                    @Html.ValidationMessageFor(model => model.MLRQ5, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+
+
+
+
+
+@Styles.Render("~/Content/themes/base/jquery-ui.min.css",
+                "~/Content/bootstrap-datepicker.css")
+}
+
+
+
+    @Scripts.Render("~/Scripts/bootstrap-datepicker..js",
+                     "~/Scripts/853Assess.js")
+
+    <script>
+
+        $(function () {
+            $('.input-group-addon .date').datepicker({
+                format: "dd/mm/yyyy"
+            });
+            $(".date-picker").datepicker({
+                dateFormat: 'dd/mm/yy'
+            });
+
+        });
+    </script>
+
+    

@@ -1,0 +1,90 @@
+﻿@model hidMy.Models.InspectionDetails
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>InspectionDetails</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NationalPremisesRegister.Area)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NationalPremisesRegister.Area)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MLRQ1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MLRQ1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MLRQ2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MLRQ2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MLRQ3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MLRQ3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MLRQ4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MLRQ4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MLRQ5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MLRQ5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.officer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.officer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GeneralHygieneStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GeneralHygieneStatus)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.InspectionNo }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

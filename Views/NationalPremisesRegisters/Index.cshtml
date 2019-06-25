@@ -1,0 +1,104 @@
+﻿@model IEnumerable<hidMy.Models.NationalPremisesRegister>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.Reference)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+       
+        <th>
+            @Html.DisplayNameFor(model => model.StreetName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Townland)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Locality)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CityTown)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.County)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FoodBusinessOperators)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BusinessCategory)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BusinessType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RiskCategory)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FoodOfficer)
+        </th>
+        @*<th></th>*@
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.Reference)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Name)
+    </td>
+    
+    
+    <td>
+        @Html.DisplayFor(modelItem => item.StreetName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Townland)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Locality)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CityTown)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.County)
+    </td>
+    
+    <td>
+        @Html.DisplayFor(modelItem => item.FoodBusinessOperators)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.BusinessCategory)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.BusinessType)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.RiskCategory)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.FoodOfficer)
+    </td>
+    @*<td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.Reference }) |
+        @Html.ActionLink("Details", "Details", new { id = item.Reference }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.Reference })
+    </td>*@
+</tr>
+}
+
+</table>

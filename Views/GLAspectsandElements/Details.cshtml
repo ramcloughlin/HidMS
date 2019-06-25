@@ -1,0 +1,69 @@
+﻿@using hidMy.Models
+
+@model IList<hidMy.Models_ViewModels.GLAspectsandElementLeglislation>
+
+@{
+    ViewBag.Title = "Details for Checklist";
+}
+
+<h2>Details for Checklist Item - <b> "@ViewBag.parent"</b> </h2>
+
+<div>
+    <h4>View Checklist item <b>"@ViewBag.parent"</b> and Siblings</h4>
+   
+    <div>
+        <p>
+            @Html.ActionLink("List", "Index", new { page = (Request.QueryString["page"] ?? (string)Session["DefaultItemsPerPage"]), ipp = (Request.QueryString["ipp"] ?? (string)Session["DefaultItemsPerPage"]) })
+        </p>
+        <hr />
+        <table class="table-hover">
+
+            <tr>
+
+                <th>
+                    ID
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Leglislation Link
+                </th>
+                <th>
+                    Clause
+                </th>
+                <th>
+                    Clause Text
+                </th>
+                <th>Edit</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AspectsElementsID)
+            </td>
+
+            @{ var ident = item.Level * 20;}
+            <td style="padding-left: @(ident)px;">
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>@Html.DisplayFor(modelItem => item.LeglislationLINK)</td>
+            <td>@Html.DisplayFor(modelItem => item.Clause)</td>
+            <td>@Html.DisplayFor(modelItem => item.ClauseText)</td>
+            <td>
+                <a href="@Url.Action("Edit", "GLAspectsandElements", new { id = item.AspectsElementsID,  ipp = (Request.QueryString["ipp"] ?? (string)Session["DefaultItemsPerPage"])})" class="btn btn-sm" title="Update recod">
+                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                </a>
+            </td>
+        </tr>
+            }
+        </table>
+
+    </div>
+  
+</div>
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.AspectsElementsID }) |*@
+    @Html.ActionLink("Back to List", "Index")
+</p>
